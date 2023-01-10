@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="bookBean" class="org.example.Book" autowire="byName">
+        <property name="bookId" value="21"/>
+        <property name="bookName" value="Harry Potter"/>
+        <property name="auth" ref="auth"/>
+    </bean>
+
+
+    <bean id="auth" class="org.example.Author">
+        <property name="authorId" value="101"/>
+        <property name="authorName" value="J.K.Rowling"/>
+        <property name="authorEmail" value="rowling@gmail.com"/>
+    </bean>
+</beans>
